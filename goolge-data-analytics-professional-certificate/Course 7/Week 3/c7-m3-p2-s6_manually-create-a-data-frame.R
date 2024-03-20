@@ -106,3 +106,8 @@ penguins %>%
   mutate(body_mass_kg = body_mass_g / 1000,
          flipper_length_m = flipper_length_mm / 1000) %>% 
   select(species, body_mass_kg, flipper_length_m)
+
+clean_names()
+
+penguins %>% 
+  arrange(bill_length_mm)
