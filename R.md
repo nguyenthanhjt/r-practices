@@ -11,7 +11,7 @@
 - `str()`:
 - `glimpse()`:
 - `colnames()`:
-- ``:
+- `head()`: view first 6 rows of data
 
 ### Data Manipulation function
 
@@ -30,3 +30,11 @@
   - If a model is unbiased bias(actual, predicted) should be close to zero. Bias is calculated by taking the average of (actual - predicted).
 - `sample()`: function allows you to take a random sample of elements from a data set. 
 - `arrange(data-set, desc(column-name))`: sort `asc(column-name)`, `desc(column-name`) by input column-name
+
+### Visualization functions
+
+- scatter-plot: `ggplot(data = [data-name]) + geom_point(mapping = aes(x = [data-property-map-to-x-axis], y = [data-property-map-to-y-axis]))`
+  - ggplot(datadata = [data-name]): The first argument of the ggplot() function is the data set to use in the plot.
+  - geom_point(): function uses points to create scatterplots
+  - mapping = aes(x = [data-property-map-to-x-axis], y = [data-property-map-to-y-axis]): mapping argument is always paired with the aes() function. The x and y arguments of the aes() function specify which variables to map to the x-axis and the y-axis of the coordinate system. 
+
