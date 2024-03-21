@@ -37,3 +37,27 @@ penguins %>%
 # filtering
 
 penguins %>% filter(species == 'Adelie')
+
+penguins %>% filter(species == 'Gentoo')
+
+
+# use the summarize() and min() functions to find the minimum value for the variable bill_depth_mm.
+penguins %>% 
+  drop_na() %>% 
+  group_by(species) %>% 
+  summarise(min_dp = min(bill_depth_mm))
+
+penguins %>% 
+  drop_na() %>% 
+  mutate(is_large = bill_length_mm == 45) %>% 
+  filter(is_large == TRUE) %>% 
+  select(species, bill_length_mm, is_large)
+
+penguins %>%
+  unite(length_depth, c("bill_length_mm", "bill_depth_mm") , sep = "-") %>%
+  select(species, length_depth)
+
+
+unit_df <- unite(penguins,length_depth, bill_length_mm,bill_depth_mm, sep = "-") %>% 
+  select(species,length_depth)
+head(unit_df)
