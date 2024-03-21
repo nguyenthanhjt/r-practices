@@ -6,6 +6,15 @@
 
 ## R common function
 
+### Inspect - Review data set information
+
+- `str()`:
+- `glimpse()`:
+- `colnames()`:
+- ``:
+
+### Data Manipulation function
+
 - `separate()`: `separate(dataset, column-name, into=c('new-col-1','new-col-2',..), sep = 'separator-character')`: split data in a column into some others columns
 - `unit()`: allow to merge/combine columns together
 - `mutate()`: modify the data set by add/.. columns
