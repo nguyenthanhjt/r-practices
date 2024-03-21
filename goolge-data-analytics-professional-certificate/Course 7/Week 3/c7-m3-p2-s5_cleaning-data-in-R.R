@@ -51,3 +51,6 @@ cancel_booking <- bookings_df %>%
   summarise(canceled_qty = sum(is_canceled),
             avg_lead_time = mean(lead_time))
 head(cancel_booking)
+
+glimpse(ToothGrowth)
+colnames(ToothGrowth)
