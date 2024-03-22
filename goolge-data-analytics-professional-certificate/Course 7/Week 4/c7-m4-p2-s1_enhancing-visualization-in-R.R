@@ -64,7 +64,10 @@ ggplot(data = penguins) +
     )
   ) 
 
-# change color of all data point: add color ='color-name' outside of aes()
+# change appearence of overall plot without regard to specific variables,
+# -> write code inside geom_fn() but outside the aes() fn 
+
+# change color of all data point: add color ='color-name'
 ggplot(data = penguins) +
   geom_point(
     mapping = aes(
@@ -74,8 +77,6 @@ ggplot(data = penguins) +
     ), color = "purple"
   ) 
 
-# change appearence of overall plot without regard to specific variables,
-# -> write code outside the aes() fn 
 
 
 
