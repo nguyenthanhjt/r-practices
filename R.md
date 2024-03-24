@@ -70,3 +70,41 @@ ggsave('hotel_booking_chart.png',
        width = 7,
        height = 7)
 ```
+
+### R Markdown
+
+#### Setting the output of an R Markdown document
+
+pdf_document – This creates a PDF file with LaTeX (an open source document layout system). If you don’t already have LaTeX, RStudio will automatically prompt you to install it.
+
+word_document – This creates a Microsoft Word document (.docx).
+
+odt_document – This creates an OpenDocument Text document (.odt).
+
+rtf_document – This creates a Rich Text Format document (.rtf).  
+
+md_document – This creates a Markdown document (which strictly conforms to the original Markdown specification)
+
+github_document – This creates a GitHub document which is a customized version of a Markdown document designed for sharing on GitHub.
+
+For example, the following code creates an HTML document:
+
+---
+
+title: "Demo"
+
+output: html_document
+
+---
+
+And the following code creates a PDF document:
+
+---
+
+title: "Demo"
+
+output: pdf_document
+
+---
+
+The Knit button in the RStudio source editor renders a file to the first format listed in its output field (HTML is the default). You can render a file to additional formats by clicking the dropdown menu next to the knit button.
