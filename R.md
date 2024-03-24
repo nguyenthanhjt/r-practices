@@ -38,3 +38,35 @@
   - geom_point(): function uses points to create scatterplots
   - mapping = aes(x = [data-property-map-to-x-axis], y = [data-property-map-to-y-axis]): mapping argument is always paired with the aes() function. The x and y arguments of the aes() function specify which variables to map to the x-axis and the y-axis of the coordinate system. 
 
+- facet()
+
+### Annotation
+
+- `lab(title="", subtitle="", caption="", x = [], y = [])`:
+- paste0("text: ", [var-1], "text-between", [var-2]):
+
+```r
+ggplot(data = hotel_bookings) +
+  geom_bar(mapping = aes(x = market_segment)) +
+  facet_wrap( ~ hotel) +
+  theme(axis.text.x = element_text(angle = 45)) +
+  labs(
+    title = "Comparison of market segments by hotel type for hotel bookings",
+    caption = paste0("Data from: ", mindate, " to ", maxdate),
+    x = "Market Segment",
+    y = "Number of Bookings"
+  )
+```
+
+
+### Export
+
+- `ggsave([file-naae], width=[], height=[])`
+- `png(file = "exampleplot.png", bg = "transparent") plot(1:10) rect(1, 5, 3, 7, col = "white") dev.off()`
+- `pdf(file = "/Users/username/Desktop/example.pdf", width = 4, height = 4) plot(x = 1:10, y = 1:10) abline(v = 0) text(x = 0, y = 1, labels = "Random text") dev.off()`
+
+```r
+ggsave('hotel_booking_chart.png',
+       width = 7,
+       height = 7)
+```
