@@ -1,0 +1,15 @@
+---
+title: "Penguins Plots"
+author: "JT"
+date: "2024-03-24"
+output: html_document
+---
+
+## Setting up my env
+
+Notes: setting up my env by loading the `tidyverse` and `palmerpenguins` packages:
+```{r }
+library(tidyverse)
+library(palmerpenguins)
+```
+
