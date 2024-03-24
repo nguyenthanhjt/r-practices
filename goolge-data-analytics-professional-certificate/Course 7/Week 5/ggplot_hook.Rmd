@@ -1,0 +1,25 @@
+---
+title: "ggplot_hook"
+author: "JT"
+date: "2024-03-24"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+## Setting up my environment
+Notes: setting up my environment by loading the 'tidyverse' and 'palmerpenguins' packages
+
+```{r loading packages, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+library(tidyverse)
+library(palmerpenguins)
+data(penguins)
+```
+
+* Visualization
+
+```{r ggplot for penguin data visualization, echo=FALSE}
+ggplot(data = penguins) +
+geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g))
+```
