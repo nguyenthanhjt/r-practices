@@ -4,6 +4,8 @@ View(chocolate_df)
 
 colnames(chocolate_df)
 
+glimpse(chocolate_df)
+
 chocolate_df_rename <- chocolate_df %>%
   rename(Company = `Company 
 (Maker-if known)`)
@@ -18,6 +20,7 @@ head(trimmed_flavors_df)
 best_trimmed_flavors_df <- trimmed_flavors_df %>%
   filter(`Cocoa\nPercent` > 70, Rating > 3.5)
 head(best_trimmed_flavors_df)
+View(best_trimmed_flavors_df)
 
 ggplot(data = best_trimmed_flavors_df) +
   geom_bar(mapping = aes(x = `Company\nLocation`, fill=Rating))
