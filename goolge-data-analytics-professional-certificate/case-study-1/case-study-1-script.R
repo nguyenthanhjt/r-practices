@@ -53,8 +53,6 @@ bike_trip <- janitor::remove_empty(bike_trip, which = c("rows"))
 bike_trip <- drop_na(bike_trip)
 
 ## remove duplicated rows
-### df_no_dups <- bike_trip[!duplicated(bike_trip$ride_id), ]
-### print(paste("Removed", nrow(bike_trip) - nrow(df_no_dups), "duplicated rows"))
 ### df_no_dups <- bike_trip[!duplicated(bike_trip$ride_id),]
 ### print(paste("Removed",nrow(bike_trip) - nrow(df_no_dups), "duplicated rows"))
 ### -> "Removed 0 duplicated rows"
