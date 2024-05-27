@@ -55,6 +55,9 @@ bike_trip <- drop_na(bike_trip)
 ## remove duplicated rows
 ### df_no_dups <- bike_trip[!duplicated(bike_trip$ride_id),]
 ### print(paste("Removed",nrow(bike_trip) - nrow(df_no_dups), "duplicated rows"))
+#### duplicated(bike_trip$ride_id): This function returns a logical vector indicating which rows have duplicate values in the ride_id column. TRUE means the value is a duplicate, and FALSE means it is unique or the first occurrence.
+#### !duplicated(bike_trip$ride_id): The ! operator negates the logical vector, so TRUE becomes FALSE and vice versa. This creates a logical vector where TRUE indicates rows with unique ride_id values or the first occurrence of duplicates.
+#### bike_trip[!duplicated(bike_trip$ride_id),]: This subsets the original bike_trip data frame to include only the rows where ride_id values are unique or the first occurrence of duplicates. The resulting data frame is stored in df_no_dups.
 ### -> "Removed 0 duplicated rows"
 df_no_dups <- distinct(bike_trip)
 head(df_no_dups)
