@@ -43,12 +43,18 @@ str(m10)
 str(m11)
 str(m12)
 
+#====================================================
+# STEP 2: WRANGLE DATA AND COMBINE INTO A SINGLE FILE
+#====================================================
 # merge DFs into 1 DF
 bike_trip <- rbind(m01, m02, m03, m04, m05, m06, m07, m08, m09, m10, m11, m12)
 remove(m01, m02, m03, m04, m05, m06, m07, m08, m09, m10, m11, m12)
 # determine number of rows before perform data cleaning
 orgRowNum <- nrow(bike_trip)
 
+#======================================================
+# STEP 3: CLEAN UP AND ADD DATA TO PREPARE FOR ANALYSIS
+#======================================================
 # cleaning
 ## remove NA value
 bike_trip <- janitor::remove_empty(bike_trip, which = c("cols"))
@@ -83,3 +89,12 @@ summary(df_no_dups$ride_time_m)
 
 ## determine number of rows after perform data cleaning
 rowNum <- nrow(bike_trip)
+
+#=====================================
+# STEP 4: CONDUCT DESCRIPTIVE ANALYSIS
+#=====================================
+
+
+#=================================================
+# STEP 5: EXPORT SUMMARY FILE FOR FURTHER ANALYSIS
+#=================================================
