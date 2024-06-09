@@ -5,9 +5,12 @@ library(ggplot2)
 
 getwd()
 
-
+setwd("/Users/nguyenthanhjt/workspaces/r-practices/goolge-data-analytics-professional-certificate/case-study-1/")
 setwd("./goolge-data-analytics-professional-certificate/case-study-1/")
 
+#=====================
+# STEP 1: COLLECT DATA
+#=====================
 m01 <- read.csv("./input-data/202301-divvy-tripdata.csv")
 m02 <- read.csv("./input-data/202302-divvy-tripdata.csv")
 m03 <- read.csv("./input-data/202303-divvy-tripdata.csv")
