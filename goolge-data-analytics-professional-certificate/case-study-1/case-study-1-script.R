@@ -3,7 +3,7 @@ library(janitor)
 library(lubridate)
 library(ggplot2)
 
-getwd()
+getwd() # Get working directory
 
 setwd("/Users/nguyenthanhjt/workspaces/r-practices/goolge-data-analytics-professional-certificate/case-study-1/")
 setwd("./goolge-data-analytics-professional-certificate/case-study-1/")
