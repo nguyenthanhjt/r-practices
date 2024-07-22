@@ -6,6 +6,8 @@
 
 ## R common function
 
+- l
+
 ### Examine & Clean data
 
 - `clean_names(data, case)`: 
