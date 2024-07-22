@@ -6,6 +6,20 @@
 
 ## R common function
 
+### Examine & Clean data
+
+- `clean_names(data, case)`: 
+  - data: the input data.frame.
+  - case: The desired target case (default is "snake"), indicated by these possible values:
+    - "snake" produces snake_case
+    - "lower_camel" or "small_camel" produces lowerCamel
+    - "upper_camel" or "big_camel" produces UpperCamel
+    - "screaming_snake" or "all_caps" produces ALL_CAPS
+    - "lower_upper" produces lowerUPPER
+    - "upper_lower" produces UPPERlower
+    - old_janitor: legacy compatibility option to preserve behavior of clean_names prior to addition of the "case" argument(janitor versions <= 0.3.1 ). Provided as a quick fix for old scripts broken by the changes to clean_names in janitor v1.0.
+    - "parsed", "mixed", "none": less-common cases offered by snakecase::to_any_case. See to_any_case for details.
+
 ### Inspect - Review data set information
 
 - `str()`:
