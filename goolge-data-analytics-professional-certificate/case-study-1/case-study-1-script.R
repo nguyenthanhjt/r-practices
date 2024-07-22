@@ -5,7 +5,7 @@ library(ggplot2)
 
 getwd() # Get working directory
 
-setwd("/Users/nguyenthanhjt/workspaces/r-practices/goolge-data-analytics-professional-certificate/case-study-1/")
+# Set working directory
 setwd("./goolge-data-analytics-professional-certificate/case-study-1/")
 
 #=====================
