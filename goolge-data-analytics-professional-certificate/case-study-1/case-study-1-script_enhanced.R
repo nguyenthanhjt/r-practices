@@ -67,6 +67,15 @@ ride_count_by_day <- cyclistic_data %>%
 
 print(ride_count_by_day)
 
+# Analyze start and end station usage
+station_usage <- cyclistic_data %>%
+  group_by(member_casual, start_station_name, end_station_name) %>%
+  summarise(number_of_rides = n(),
+            average_ride_length = mean(ride_length)) %>%
+  arrange(desc(number_of_rides))
+
+print(head(station_usage, 20))
+
 #=====================
 # STEP 4: VISUALIZE DATA
 #=====================
@@ -83,5 +92,19 @@ ggplot(ride_count_by_day, aes(x = day_of_week, y = number_of_rides, fill = membe
   geom_bar(stat = "identity", position = "dodge") +
   labs(title = "Ride Count by Day of the Week",
        x = "Day of the Week",
+       y = "Number of Rides") +
+  theme_minimal()
+
+# Visualization: Popular start and end stations by member type
+top_stations <- station_usage %>% 
+  filter(member_casual %in% c("member", "casual")) %>%
+  group_by(member_casual) %>%
+  top_n(10, number_of_rides)
+
+ggplot(top_stations, aes(x = reorder(start_station_name, -number_of_rides), y = number_of_rides, fill = member_casual)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  coord_flip() +
+  labs(title = "Top Start Stations by Member Type",
+       x = "Start Station",
        y = "Number of Rides") +
   theme_minimal()
