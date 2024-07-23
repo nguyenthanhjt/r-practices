@@ -6,7 +6,22 @@
 
 ## R common function
 
-- l
+- `lapply(X, FUN, …)`: returns a list of the same length as X, each element of which is the result of applying FUN to the corresponding element of X.
+- `sapply(X, FUN, …, simplify = TRUE, USE.NAMES = TRUE)`:  is a user-friendly version and wrapper of lapply by default returning a vector, matrix or, if simplify = "array", an array if appropriate, by applying simplify2array(). sapply(x, f, simplify = FALSE, USE.NAMES = FALSE) is the same as lapply(x, f).
+- `vapply(X, FUN, FUN.VALUE, …, USE.NAMES = TRUE)`: is similar to sapply, but has a pre-specified type of return value, so it can be safer (and sometimes faster) to use.
+- `replicate(n, expr, simplify = "array")`: is a wrapper for the common use of sapply for repeated evaluation of an expression (which will usually involve random number generation).
+- `simplify2array(x, higher = TRUE)`: is the utility called from sapply() when simplify is not false and is similarly called from mapply().
+
+  - X: a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.
+  - FUN: the function to be applied to each element of X: see ‘Details’. In the case of functions like +, %*%, the function name must be backquoted or quoted.
+  - …: optional arguments to FUN.
+  - simplify: logical or character string; should the result be simplified to a vector, matrix or higher dimensional array if possible? For sapply it must be named and not abbreviated. The default value, TRUE, returns a vector or matrix if appropriate, whereas if simplify = "array" the result may be an array of “rank” (length(dim(.))) one higher than the result of FUN(X[[i]]).
+  - USE.NAMES: logical; if TRUE and if X is character, use X as names for the result unless it had names already. Since this argument follows … its name cannot be abbreviated.
+  - FUN.VALUE: a (generalized) vector; a template for the return value from FUN. See ‘Details’.
+  - n: integer: the number of replications.
+  - expr: the expression (a language object, usually a call) to evaluate repeatedly.
+  - x: a list, typically returned from lapply().
+  - higher: logical; if true, simplify2array() will produce a (“higher rank”) array when appropriate, whereas higher = FALSE would return a matrix (or vector) only. These two cases correspond to sapply(*, simplify = "array") or simplify = TRUE, respectively.
 
 ### Examine & Clean data
 
