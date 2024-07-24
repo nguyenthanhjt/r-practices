@@ -51,6 +51,11 @@
 - `mutate()`: modify the data set by add/.. columns
 - `group_by()`: group data by columns
   - `group_by(column-1-name, column-2-name,...)`
+  - `.groups`: argument controls the grouping structure of the result. It has three possible values:
+    1. **"drop_last"** (default): The grouping is reduced by one level, which means it drops the last grouping variable but retains the rest.
+    2. **"drop"**: All grouping is removed, resulting in an ungrouped data frame.
+    3. **"keep"**: The grouping structure is kept as it is, meaning the resulting data frame remains grouped by all the variables specified in `group_by`.
+
 - `mean()`: calculate average of a columns
   - `mean(column-name)` 
 - `sd()`: calculate the Deviation compare to average value of a column
